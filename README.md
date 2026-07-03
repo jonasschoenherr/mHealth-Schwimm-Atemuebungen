@@ -21,7 +21,7 @@ Starten mit:
 ```bash
 yarn start
 ```
-Und dann den QR-Code mit der Expo Go App Scannen
+Und dann den QR-Code scannen und mit der Expo Go App öffnen (funktioniert nicht im edoram W-Lan)
 
 oder:<br>
 `yarn start -w` für browser<br>
