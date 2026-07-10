@@ -1,10 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { FontAwesome6 } from '@expo/vector-icons';
+import { Button } from 'react-native';
 
-export default function App() {
+export default function WelcomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
+
+      <Text>Welcome Screen</Text>
+      {/* Go back using the navigation object */}
+      <Button title="Go Back" onPress={() => navigation.goBack()} />
 
       <Text style={styles.title}>Welcome to SwimBreath</Text>
 
@@ -43,6 +48,7 @@ export default function App() {
       </Pressable>
 
       <StatusBar style="light" />
+
     </View>
   );
 }
