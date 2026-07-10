@@ -1,9 +1,9 @@
-import { defaultScreenContent } from "../modules/defaults";
+import DefaultScreenContent from "../elements/DefaultScreenContent";
 
 
 const HomeScreen = ({ navigation, route }) => {
     return (
-        <defaultScreenContent navigation={navigate} route={route} />
+        <DefaultScreenContent navigation={navigation} route={route} />
     );
 }
 

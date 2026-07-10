@@ -1,7 +1,7 @@
 import PersistentStorage from "./PersistentStorage";
 
 
-export const userFinishedStartScreen = PersistentStorage();
-export const userFinishedGeneralQuestionsScreen = PersistentStorage();
-export const userFinishedHoldBreathScreen = PersistentStorage();
+export const userFinishedStartScreen = new PersistentStorage();
+export const userFinishedGeneralQuestionsScreen = new PersistentStorage();
+export const userFinishedHoldBreathScreen = new PersistentStorage();
 

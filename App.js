@@ -18,61 +18,6 @@ import {
 
 const Stack = createNativeStackNavigator();
 
-function HomeScreen({ navigation, route }) {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Home Screen</Text>
-      <Button
-        title="Zu Details (string gesteuert)"
-        onPress={() => navigation.navigate('Details')}
-      />
-      <View style={styles.spacer} />
-      <Button
-        title="Programmatisch: Wechsel zu Settings nach 1s"
-        onPress={() => {
-          // Beispiel: Wechsel durch Code (z.B. nach API-Call oder Timer)
-          setTimeout(() => {
-            navigation.navigate('Settings');
-          }, 1000);
-        }}
-      />
-    </View>
-  );
-}
-
-function DetailsScreen({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Details Screen</Text>
-      <Button
-        title="Zurück Home"
-        onPress={() => navigation.navigate('Home')}
-      />
-      <View style={styles.spacer} />
-      <Button
-        title="Programmatisch: Wechsel zu Home (Code)"
-        onPress={() => {
-          // Beispiel für programmatischen Wechsel zwischen zwei Screens
-          // Hier wird per Code von Details zu Home navigiert
-          navigation.navigate('Home');
-        }}
-      />
-    </View>
-  );
-}
-
-function SettingsScreen({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Settings Screen</Text>
-      <Button
-        title="Zu Details"
-        onPress={() => navigation.navigate('Details')}
-      />
-    </View>
-  );
-}
-
 export default function App() {
   let firstScreen = null;
 
@@ -102,18 +47,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  title: {
-    fontSize: 22,
-    marginBottom: 16
-  },
-  spacer: {
-    height: 12
-  }
-});
