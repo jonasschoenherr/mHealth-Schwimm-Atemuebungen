@@ -5,9 +5,34 @@ import { Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import WelcomeScreen from './screens/WelcomeScreen';
+import { NativeRouter, Route, Switch, Link, withRouter, useNavigate } from 'react-router-native';
+
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+
+
+const root = createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
+
+/*
+const Routes = () => (
+  <NativeRouter>
+    <Route exact path="/" component={HomeScreen} />
+    <Route exact path="/welcome" component={WelcomeScreen} />
+  </NativeRouter>
+);
+*/
 
 // 1. Define Screens
-function HomeScreen({ navigation }) {
+function HomeScreen({ history }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
@@ -41,11 +66,62 @@ function DetailsScreen({ navigation }) {
 const Stack = createNativeStackNavigator();
 
 
-export default function App() {
+// 1. Die Home-Komponente
+const Home = () => {
+  const navigate = useNavigate();
+
   return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Willkommen auf der Startseite!</Text>
+      {/* Navigation via Link-Komponente */}
+      <Link to="/about" underlayColor="#f0f4f7">
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Gehe zu Über uns (Link)</Text>
+        </View>
+      </Link>
+      
+      {/* Navigation via history.push (programmatisch) */}
+      <Button 
+        title="Gehe zu Über uns (Button)" 
+        onPress={() => navigate('/about')} 
+      />
+    </View>
+  );
+};
+
+// 2. Die Über uns-Komponente
+const About = () => (
+  <View style={styles.container}>
+    <Text style={styles.text}>Das ist die Über uns Seite.</Text>
+    <Link to="/" underlayColor="#f0f4f7">
+      <View style={styles.button}>
+        <Text style={styles.buttonText}>Zurück zur Startseite</Text>
+      </View>
+    </Link>
+  </View>
+);
+
+export default function App() {
+  const navigate = useNavigate();
+
+  return (
+    <View style={styles.container}>
+      <NativeRouter>
+          {/* Switch sorgt dafür, dass nur die erste passende Route gerendert wird */}
+          <Switch>
+            <Route exact path="/" component={navigate("/")} />
+            <Route path="/about" component={navigate("/about")} />
+          </Switch>
+        </NativeRouter>
+    </View>
+  );
+
+  /*
     <View style={styles.container}>
       <Text>Wenn du diesen Text lesen kannst, hat alles funktioniert!</Text>
       <StatusBar style="auto" />
+
+      <Routes />
 
       <NavigationContainer>
         <Stack.Navigator>
@@ -55,7 +131,7 @@ export default function App() {
         </Stack.Navigator>
       </NavigationContainer>
     </View>
-  );
+    */
 }
 
 const styles = StyleSheet.create({
