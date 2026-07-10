@@ -4,6 +4,7 @@ import * as React from 'react';
 import { Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import WelcomeScreen from './screens/WelcomeScreen';
 
 // 1. Define Screens
 function HomeScreen({ navigation }) {
@@ -14,6 +15,13 @@ function HomeScreen({ navigation }) {
       <Button
         title="Go to Details"
         onPress={() => navigation.navigate('Details')}
+      />
+
+      <Text>Welcome Screen</Text>
+      {/* Navigate using the navigation object */}
+      <Button
+        title="Go to Welcome Screen"
+        onPress={() => navigation.navigate('Welcome Screen')}
       />
     </View>
   );
@@ -33,9 +41,6 @@ function DetailsScreen({ navigation }) {
 const Stack = createNativeStackNavigator();
 
 
-
-
-
 export default function App() {
   return (
     <View style={styles.container}>
@@ -46,18 +51,17 @@ export default function App() {
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Details" component={DetailsScreen} />
+          <Stack.Screen name="Welcome Screen" component={WelcomeScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>
   );
-}   
-
-// <RouterProvider router={router} />
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#979797',
+    backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
   },
