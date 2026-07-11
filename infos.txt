@@ -1,0 +1,7 @@
+Dozent Lint-Enbindung Boilerplate-Code:
+- https://github.com/kochd-htw/reactjs-lessons/tree/boilerplate-expo
+- Datein die kopiert werden müssen (soweit ich mich erinnere):
+    - ".babelrc"
+    - ".eslintignore"
+    - ".eslintrc.cjs"
+    - "devDependencies" in "package.json"
