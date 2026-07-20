@@ -14,50 +14,57 @@ const OnboardingStartScreen = ({ navigation, route }) => {
     return (
         <View style={styles.container}>
 
-        <Text>Welcome Screen</Text>
-        {/* Go back using the navigation object */}
-        <Button title="Go Back" onPress={() => navigation.goBack()} />
+            <Text style={styles.title}>Welcome to SwimBreath</Text>
 
-        <Text style={styles.title}>Welcome to SwimBreath</Text>
+            <View style={{ height: 30 }} />
 
-        <View style={styles.item}>
-            <FontAwesome6 name="user-doctor" size={30} color="#F5A623" style={styles.image}/>
-            <View>
-            <Text style={styles.heading}>No experience needed</Text>
-            <Text style={styles.description}>
-                The app provides essential breathing guidance.
-            </Text>
+            <View style={styles.item}>
+                <FontAwesome6 name="user-doctor" size={30} color="#F5A623" style={styles.image}/>
+                <View>
+                <Text style={styles.heading}>No experience needed</Text>
+                <Text style={styles.description}>
+                    The app provides essential breathing guidance.
+                </Text>
+                </View>
             </View>
-        </View>
 
-        <View style={styles.item}>
-            <FontAwesome6 name="heart-pulse" size={30} color="#F5A623" style={styles.image}/>
-            <View>
-            <Text style={styles.heading}>Steady breath</Text>
-            <Text style={styles.description}>
-                Train your breathing before swimming.
-            </Text>
+            <View style={styles.item}>
+                <FontAwesome6 name="heart-pulse" size={30} color="#F5A623" style={styles.image}/>
+                <View>
+                <Text style={styles.heading}>Steady breath</Text>
+                <Text style={styles.description}>
+                    Train your breathing before swimming.
+                </Text>
+                </View>
             </View>
-        </View>
 
-        <View style={styles.item}>
-            <FontAwesome6 name="chart-line" size={30} color="#F5A623" style={styles.image}/>
-            <View>
-            <Text style={styles.heading}>Track your progress</Text>
-            <Text style={styles.description}>
-                Monitor your improvement over time.
-            </Text>
+            <View style={styles.item}>
+                <FontAwesome6 name="chart-line" size={30} color="#F5A623" style={styles.image}/>
+                <View>
+                <Text style={styles.heading}>Track your progress</Text>
+                <Text style={styles.description}>
+                    Monitor your improvement over time.
+                </Text>
+                </View>
             </View>
-        </View>
 
-        <Pressable style={styles.button} onPress={() => {
-            userFinishedStartScreen.set(true);
-            navigation.navigate("/onboarding/general_questions");
-          }}>
-          <Text style={styles.buttonText}>Continue</Text>
-        </Pressable>
+            <View style={{ height: 180 }} />
 
-        <StatusBar style="light" />
+            <View style={styles.dots}>
+              <View style={styles.whiteDot} />
+              <View style={styles.dot} />
+              <View style={styles.dot} />
+            </View>
+
+            <Pressable style={styles.button} onPress={() => {
+                userFinishedStartScreen.set(true);
+                navigation.navigate("/onboarding/general_questions");
+              }}>
+              <Text style={styles.buttonText}>Continue</Text>
+            </Pressable>
+
+            <StatusBar style="light" />
+
 
         </View>
     );
