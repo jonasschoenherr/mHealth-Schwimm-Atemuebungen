@@ -3,9 +3,9 @@ import { Button, Text, View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import OnboardingStartScreen from './screens/OnboardingStartScreen';
-import OnboardingGeneralQuestionsScreen from './screens/OnboardingGeneralQuestionsScreen';
-import OnboardingHoldBreathScreen from './screens/OnboardingHoldBreathScreen';
+import Onboarding1 from './screens/Onboarding1';
+import Onboarding2 from './screens/Onboarding2';
+import Onboarding3 from './screens/Onboarding3';
 import HomeScreen from './screens/HomeScreen';
 import BreathingExerciseRunning from './screens/BreathingExerciseRunning';
 import BreathingExerciseFinished from './screens/BreathingExerciseFinished';
@@ -15,20 +15,19 @@ import {
   userFinishedHoldBreathScreen
 } from './state/onboarding';
 
-
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   let firstScreen = null;
 
   if (!userFinishedStartScreen.get()) {
-    firstScreen = "/onboarding/start";
+    firstScreen = "/onboarding/page1";
   }
   else if (!userFinishedGeneralQuestionsScreen.get()) {
-    firstScreen = "/onboarding/general_questions";
+    firstScreen = "/onboarding/page2";
   }
   else if (!userFinishedHoldBreathScreen.get()) {
-    firstScreen = "/onboarding/hold_breath";
+    firstScreen = "/onboarding/page3";
   }
   else {
     firstScreen = "/home";
@@ -36,13 +35,14 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={firstScreen}>
-        <Stack.Screen name="/onboarding/start" component={OnboardingStartScreen} />
-        <Stack.Screen name="/onboarding/general_questions" component={OnboardingGeneralQuestionsScreen} />
-        <Stack.Screen name="/onboarding/hold_breath" component={OnboardingHoldBreathScreen} />
+      {/* Set screenOptions={{ headerShown: false }} to hide the top navigation header bar */}
+      <Stack.Navigator initialRouteName={firstScreen} screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="/onboarding/page1" component={Onboarding1} />
+        <Stack.Screen name="/onboarding/page2" component={Onboarding2} />
+        <Stack.Screen name="/onboarding/page3" component={Onboarding3} />
         <Stack.Screen name="/home" component={HomeScreen} />
         <Stack.Screen name="/breathing_exercise/running" component={BreathingExerciseRunning} />
-        <Stack.Screen name="/breathing_exercise/finished" component={BreathingExerciseRunning} />
+        <Stack.Screen name="/breathing_exercise/finished" component={BreathingExerciseFinished} />
       </Stack.Navigator>
     </NavigationContainer>
   );
