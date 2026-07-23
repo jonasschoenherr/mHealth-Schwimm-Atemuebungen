@@ -3,9 +3,9 @@ import theme1 from "../styles/theme1";
 import React, { useState, useRef, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, Pressable, ScrollView, Dimensions, Platform } from 'react-native';
-import { userFinishedGeneralQuestionsScreen } from "../state/onboarding";
+import { userFinishedOnboarding2 } from "../state/onboarding";
 
-const OnboardingGeneralQuestionsScreen = ({ navigation }) => {
+const Onboarding2 = ({ navigation }) => {
   const styles = theme1;
 
   const [birthday, setBirthday] = useState("June 12, 2026");
@@ -238,7 +238,7 @@ const OnboardingGeneralQuestionsScreen = ({ navigation }) => {
             <Pressable
                 style={[styles.button, activeField !== null && { marginBottom: -7, paddingVertical: 18 }]}
                 onPress={() => {
-                  userFinishedGeneralQuestionsScreen.set(true);
+                  userFinishedOnboarding2.set(true);
                   navigation.navigate("/onboarding/page3", {
                     animation: "slide_from_right"
                   });
@@ -315,4 +315,4 @@ const OnboardingGeneralQuestionsScreen = ({ navigation }) => {
   );
 };
 
-export default OnboardingGeneralQuestionsScreen;
+export default Onboarding2;

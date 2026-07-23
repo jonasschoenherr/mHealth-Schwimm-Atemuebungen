@@ -6,14 +6,17 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Onboarding1 from './screens/Onboarding1';
 import Onboarding2 from './screens/Onboarding2';
 import Onboarding3 from './screens/Onboarding3';
-import HomeScreen from './screens/HomeScreen';
+import Home from './screens/Home';
+import Calendar from './screens/Calendar';
+import Progress from './screens/Progress';
+import Settings from './screens/Settings';
 import BreathingExerciseRunning from './screens/BreathingExerciseRunning';
 import BreathingExerciseFinished from './screens/BreathingExerciseFinished';
 
 import {
-  userFinishedStartScreen,
-  userFinishedGeneralQuestionsScreen,
-  userFinishedHoldBreathScreen
+  userFinishedOnboarding1,
+  userFinishedOnboarding2,
+  userFinishedOnboarding3
 } from './state/onboarding';
 
 
@@ -25,9 +28,9 @@ const screenAnimationOptions = ({ route }) => {
   const animation = route.params?.animation ?? "slide_from_left";
 
   const allowedAnimations = [
-    "slide_from_bottom",
     "slide_from_left",
     "slide_from_right",
+    "slide_from_bottom",
     "fade",
     "none"
   ];
@@ -43,13 +46,13 @@ const screenAnimationOptions = ({ route }) => {
 export default function App() {
   let firstScreen = null;
 
-  if (!userFinishedStartScreen.get()) {
+  if (!userFinishedOnboarding1.get()) {
     firstScreen = "/onboarding/page1";
   }
-  else if (!userFinishedGeneralQuestionsScreen.get()) {
+  else if (!userFinishedOnboarding2.get()) {
     firstScreen = "/onboarding/page2";
   }
-  else if (!userFinishedHoldBreathScreen.get()) {
+  else if (!userFinishedOnboarding3.get()) {
     firstScreen = "/onboarding/page3";
   }
   else {
@@ -86,18 +89,36 @@ export default function App() {
 
         <Stack.Screen
           name="/home"
-          component={HomeScreen}
+          component={Home}
+          options={screenAnimationOptions}
+        />
+
+                <Stack.Screen
+          name="/calendar"
+          component={Calendar}
           options={screenAnimationOptions}
         />
 
         <Stack.Screen
-          name="/breathing_exercise/running"
+          name="/progress"
+          component={Progress}
+          options={screenAnimationOptions}
+        />
+
+        <Stack.Screen
+          name="/settings"
+          component={Settings}
+          options={screenAnimationOptions}
+        />
+
+        <Stack.Screen
+          name="/home/breathing_exercise/running"
           component={BreathingExerciseRunning}
           options={screenAnimationOptions}
         />
 
         <Stack.Screen
-          name="/breathing_exercise/finished"
+          name="/home/breathing_exercise/finished"
           component={BreathingExerciseFinished}
           options={screenAnimationOptions}
         />

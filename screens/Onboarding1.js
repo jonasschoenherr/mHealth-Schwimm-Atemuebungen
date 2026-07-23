@@ -1,13 +1,13 @@
 import React from 'react';
 import theme1 from "../styles/theme1";
-import { userFinishedStartScreen } from '../state/onboarding';
+import { userFinishedOnboarding1 } from '../state/onboarding';
 
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, Pressable } from 'react-native';
 import { FontAwesome6 } from '@expo/vector-icons';
 import { Button } from 'react-native';
 
-const OnboardingStartScreen = ({ navigation }) => {
+const Onboarding1 = ({ navigation }) => {
   const styles = theme1;
 
   return (
@@ -70,7 +70,7 @@ const OnboardingStartScreen = ({ navigation }) => {
         <Pressable 
           style={styles.button} 
           onPress={() => {
-            userFinishedStartScreen.set(true);
+            userFinishedOnboarding1.set(true);
             navigation.navigate("/onboarding/page2", {
               animation: "slide_from_right"
             });
@@ -85,4 +85,4 @@ const OnboardingStartScreen = ({ navigation }) => {
   );
 };
 
-export default OnboardingStartScreen;
+export default Onboarding1;

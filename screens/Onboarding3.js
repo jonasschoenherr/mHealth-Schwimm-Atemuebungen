@@ -4,10 +4,10 @@ import { StatusBar } from 'expo-status-bar';
 import { Text, View, Pressable } from 'react-native';
 import { Button } from 'react-native';
 import { useState, useEffect  } from "react";
-import { userFinishedHoldBreathScreen } from "../state/onboarding";
+import { userFinishedOnboarding3 } from "../state/onboarding";
 
 
-const OnboardingHoldBreathScreen = ({ navigation, route }) => {
+const Onboarding3 = ({ navigation, route }) => {
 
     const styles = theme1;
 
@@ -103,7 +103,7 @@ const OnboardingHoldBreathScreen = ({ navigation, route }) => {
             </View>
 
             <Pressable style={styles.button} onPress={() => {
-                userFinishedHoldBreathScreen.set(true);
+                userFinishedOnboarding3.set(true);
                 navigation.navigate("/home", {
                     animation: "slide_from_right"
                 });
@@ -135,4 +135,4 @@ const OnboardingHoldBreathScreen = ({ navigation, route }) => {
     );
 }
 
-export default OnboardingHoldBreathScreen;
+export default Onboarding3;
