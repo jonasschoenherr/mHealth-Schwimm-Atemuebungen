@@ -47,7 +47,7 @@ const homeStyles = StyleSheet.create({
   statsGrid: {
     flexDirection: 'row',
     gap: 12,
-    marginBottom: 14,
+    marginBottom: 12,
   },
   statBox: {
     flex: 1,
@@ -266,13 +266,13 @@ const homeStyles = StyleSheet.create({
     width: '12%',
     textAlign: 'center',
     color: '#8E8E93',
-    fontSize: 11,
+    fontSize: 13,
     fontWeight: '600',
-    marginBottom: 4,
+    marginBottom: 6,
   },
   calCell: {
     width: '12%',
-    aspectRatio: 1,
+    aspectRatio: 0.5,
     backgroundColor: '#2C2C2E',
     borderRadius: 8,
     justifyContent: 'center',

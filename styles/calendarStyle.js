@@ -1,0 +1,166 @@
+import { StyleSheet } from 'react-native';
+
+const calendarStyles = StyleSheet.create({
+  topHeaderArea: {
+    paddingHorizontal: 16,
+    paddingTop: 10,
+    paddingBottom: 4,
+    backgroundColor: '#121212',
+    borderBottomWidth: 1,
+    borderBottomColor: '#2C2C2E',
+    zIndex: 10,
+  },
+  headerTitleRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 14,
+  },
+  pinnedWeekdayBar: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 8,
+    borderTopWidth: 1,
+    borderTopColor: '#1E1E21',
+  },
+  weekdayHeaderLabel: {
+    width: '14.2857%',
+    textAlign: 'center',
+    color: '#8E8E93',
+    fontSize: 13,
+    fontWeight: '600',
+  },
+  monthCardContainer: {
+    paddingHorizontal: 12,
+    marginBottom: 24,
+  },
+  monthHeaderTitle: {
+    color: '#FFFFFF',
+    fontSize: 20,
+    fontWeight: '800',
+    marginTop: 14,
+    marginBottom: 12,
+    paddingLeft: 4,
+    letterSpacing: -0.3,
+  },
+  monthGridRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    width: '100%',
+  },
+  dayCellContainer: {
+    width: '14.2857%',
+    aspectRatio: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    marginVertical: 3,
+  },
+  dayBadge: {
+    width: 38,
+    height: 38,
+    borderRadius: 19,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+  },
+  todayBadge: {
+    backgroundColor: '#DA8333',
+    shadowColor: '#DA8333',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.4,
+    shadowRadius: 6,
+    elevation: 4,
+  },
+  completedBadge: {
+    backgroundColor: '#3E291C',
+    borderWidth: 1.5,
+    borderColor: '#DA8333',
+  },
+  selectedBadge: {
+    borderWidth: 2,
+    borderColor: '#FFFFFF',
+  },
+  dayNumberText: {
+    color: '#E5E5EA',
+    fontSize: 15,
+    fontWeight: '500',
+  },
+  todayNumberText: {
+    color: '#FFFFFF',
+    fontWeight: '800',
+  },
+  completedNumberText: {
+    color: '#FFB366',
+    fontWeight: '700',
+  },
+  selectedNumberText: {
+    color: '#FFFFFF',
+    fontWeight: '700',
+  },
+  completedDot: {
+    width: 5,
+    height: 5,
+    borderRadius: 2.5,
+    backgroundColor: '#DA8333',
+    position: 'absolute',
+    bottom: -10000000,
+  },
+  completedDotOnToday: {
+    backgroundColor: '#FFFFFF',
+  },
+  detailsFloatingCard: {
+    position: 'absolute',
+    bottom: 92,
+    left: 16,
+    right: 16,
+    backgroundColor: '#232326',
+    borderRadius: 20,
+    padding: 14,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.1)',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
+    elevation: 8,
+    zIndex: 20,
+  },
+  detailsHeaderRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  detailsDateText: {
+    color: '#FFFFFF',
+    fontSize: 15,
+    fontWeight: '700',
+  },
+  detailsSubtitleText: {
+    color: '#8E8E93',
+    fontSize: 12,
+    marginTop: 2,
+  },
+  statusBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 16,
+    gap: 6,
+  },
+  statusBadgeDone: {
+    backgroundColor: 'rgba(218, 131, 51, 0.18)',
+    borderWidth: 1,
+    borderColor: 'rgba(218, 131, 51, 0.4)',
+  },
+  statusBadgeNone: {
+    backgroundColor: '#2C2C2E',
+  },
+  statusBadgeText: {
+    fontSize: 13,
+    fontWeight: '700',
+  },
+});
+
+export default calendarStyles;

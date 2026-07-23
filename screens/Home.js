@@ -64,7 +64,7 @@ const Home = ({ navigation }) => {
               <View style={homeStyles.statIconRow}>
                 <FontAwesome6 name="fire-flame-curved" size={28} color="#DA8333" shadowColor="#DA8333" shadowOpacity={0.2} shadowRadius={3} />
               </View>
-              <Text style={homeStyles.statNumber}>5 days</Text>
+              <Text style={homeStyles.statNumber}>0 days</Text>
               <Text style={homeStyles.statLabel}>Current Streak</Text>
               <Text style={homeStyles.statSubtext}>Daily Goal 0%</Text>
             </View>
@@ -74,9 +74,9 @@ const Home = ({ navigation }) => {
               <View style={homeStyles.statIconRow}>
                 <FontAwesome6 name="stopwatch" size={28} color="#64D2FF" shadowColor="#64D2FF" shadowOpacity={0.2} shadowRadius={3} />
               </View>
-              <Text style={homeStyles.statNumber}>1:24 min</Text>
+              <Text style={homeStyles.statNumber}>0:04 min</Text>
               <Text style={homeStyles.statLabel}>Longest Hold</Text>
-              <Text style={homeStyles.statSubtext}>+8s this week</Text>
+              <Text style={homeStyles.statSubtext}>+4s this week</Text>
             </View>
           </View>
 
