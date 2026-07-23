@@ -15,7 +15,6 @@ const BreathingExerciseFinished = ({ navigation, route }) => {
         Great job! You finished your breathing exercise.
       </Text>
 
-
       <View style={exerciseStyles.finishedCircleContainer}>
         <View style={exerciseStyles.finishedCircle}>
           <Text style={exerciseStyles.checkmark}>
