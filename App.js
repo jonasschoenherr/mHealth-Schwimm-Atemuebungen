@@ -12,6 +12,7 @@ import Progress from './screens/Progress';
 import Settings from './screens/Settings';
 import BreathingExerciseRunning from './screens/BreathingExerciseRunning';
 import BreathingExerciseFinished from './screens/BreathingExerciseFinished';
+import BreathingExerciseHowItWorks from './screens/BreathingExerciseHowItWorks';
 
 import {
   userFinishedOnboarding1,
@@ -93,7 +94,7 @@ export default function App() {
           options={screenAnimationOptions}
         />
 
-                <Stack.Screen
+        <Stack.Screen
           name="/calendar"
           component={Calendar}
           options={screenAnimationOptions}
@@ -108,6 +109,12 @@ export default function App() {
         <Stack.Screen
           name="/settings"
           component={Settings}
+          options={screenAnimationOptions}
+        />
+
+        <Stack.Screen
+          name="/home/breathing_exercise/how_it_works"
+          component={BreathingExerciseHowItWorks}
           options={screenAnimationOptions}
         />
 

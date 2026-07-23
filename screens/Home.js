@@ -26,7 +26,7 @@ const Home = ({ navigation }) => {
   };
 
   const startExercise = (name, duration) => {
-    navigation.navigate('/breathing_exercise/running', { exerciseName: name, duration });
+    navigation.navigate('/home/breathing_exercise/how_it_works', { exerciseName: name, duration });
   };
 
   // Format date e.g. "Freitag, 12. Juni" or "Friday, June 12"

@@ -54,7 +54,7 @@ const Onboarding3 = ({ navigation, route }) => {
                     animation: "slide_from_left"
                 });
             }}
-            >    
+            >
             <Text style={styles.backButtonText}>Back</Text>
             </Pressable>
 
@@ -84,8 +84,8 @@ const Onboarding3 = ({ navigation, route }) => {
                     </Text>
                 </Pressable>
 
-                <Pressable 
-                    style={isRunning ? styles.startButtonActive : styles.startButton} 
+                <Pressable
+                    style={isRunning ? styles.startButtonActive : styles.startButton}
                     onPress={handleStartStop}
                 >
                     <Text style={isRunning ? styles.circleButtonTextStop : styles.circleButtonTextStart}>
