@@ -21,15 +21,6 @@ const OnboardingGeneralQuestionsScreen = ({ navigation }) => {
   const [tempDate, setTempDate] = useState({ month: "June", day: "12", year: "2026" });
   const [tempValue, setTempValue] = useState("");
 
-  const handleContinue = () => {
-    userFinishedGeneralQuestionsScreen.set(true);
-    navigation.navigate("/onboarding/page3");
-  };
-
-  const handleSkip = () => {
-    navigation.navigate("/home");
-  };
-
   // Option lists
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const days = Array.from({ length: 31 }, (_, i) => String(i + 1));
@@ -159,15 +150,18 @@ const OnboardingGeneralQuestionsScreen = ({ navigation }) => {
         </View>
         ) : (
         <Pressable
-            style={[styles.backButton, { zIndex: 100, position: 'relative', cursor: 'pointer' }]}
-            onPress={() => {navigation.navigate("/onboarding/page1")}}
-            >
-                
-            <Text style={styles.backButtonText}>Back</Text>
+          style={styles.backButton}
+          onPress={() => {
+            navigation.navigate("/onboarding/page1", {
+              animation: "slide_from_left"
+            });
+          }}
+        >    
+          <Text style={styles.backButtonText}>Back</Text>
         </Pressable>
         )}
 
-        <View style={styles.headerContainer, { marginTop: -68 }}>
+        <View style={styles.headerContainer, { marginTop: -93 }}>
           <Text style={styles.title}>Personalize your{"\n"}training</Text>
           <Text style={styles.subtitle}>
             This Information helps us create personalized exercises to your level and goals. Your details are not shared with us.
@@ -243,19 +237,29 @@ const OnboardingGeneralQuestionsScreen = ({ navigation }) => {
 
             <Pressable
                 style={[styles.button, activeField !== null && { marginBottom: -7, paddingVertical: 18 }]}
-                onPress={handleContinue}
+                onPress={() => {
+                  userFinishedGeneralQuestionsScreen.set(true);
+                  navigation.navigate("/onboarding/page3", {
+                    animation: "slide_from_right"
+                  });
+                }}
             >
                 <Text style={styles.buttonText}>{"Continue"}</Text>
             </Pressable>
 
             {activeField === null && (
+              
                 <Pressable
                     style={{
                         position: "absolute",
                         bottom: 0,
                         alignSelf: "center",
                     }}
-                    onPress={handleSkip}
+                    onPress={() => {
+                        navigation.navigate("/home", {
+                        animation: "slide_from_right"
+                        });
+                    }}
                 >
                     <Text style={styles.skipText}>
                         Skip onboarding and continue{"\n"}with default values

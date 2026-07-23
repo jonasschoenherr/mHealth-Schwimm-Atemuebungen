@@ -71,7 +71,9 @@ const OnboardingStartScreen = ({ navigation }) => {
           style={styles.button} 
           onPress={() => {
             userFinishedStartScreen.set(true);
-            navigation.navigate("/onboarding/page2");
+            navigation.navigate("/onboarding/page2", {
+              animation: "slide_from_right"
+            });
           }}
         >
           <Text style={styles.buttonText}>Continue</Text>
